@@ -2,7 +2,7 @@
   "name": "rails-frontend",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/vishal0702-pixel/rails_prototypesih",
+  "homepage": "https://github.com/vishal0702-pixel/railsSIH.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
