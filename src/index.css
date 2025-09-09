@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Beautiful background + subtle grid */
+body {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent 8%),
+              radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent 8%),
+              linear-gradient(180deg,#041226 0%, #071026 100%);
+  color: #e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* glass card */
+.card {
+  background: rgba(10,18,28,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+}
+
+/* map background (uses provided image) */
+.map-wrap {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8N4lLm48apCLdpsMPPTJr6wGdRGGkAp-PFg&s');
+  background-size: cover;
+  background-position: center;
+}
+
+/* train dot styles */
+.train-dot {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#042029;
+  border:2px solid rgba(255,255,255,0.06);
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(2,6,23,0.6);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, left 0.9s linear, top 0.9s linear;
+}
+
+/* priority glows */
+.train-high { background: linear-gradient(90deg,#ffb347,#ff7a18); box-shadow: 0 10px 30px rgba(255,140,38,0.18); }
+.train-med  { background: linear-gradient(90deg,#7dd3fc,#60a5fa); box-shadow: 0 10px 30px rgba(96,165,250,0.12); }
+.train-low  { background: linear-gradient(90deg,#c4b5fd,#a78bfa); box-shadow: 0 10px 30px rgba(167,139,250,0.12); }
+
+/* pulse on hover */
+.train-dot:hover { transform: translate(-50%,-50%) scale(1.45); }
+
+/* status badges */
+.status-badge { padding:4px 8px; border-radius:8px; font-weight:700; color:#071227; }
+
+/* colored status */
+.status-proceeded { background: linear-gradient(90deg,#bbf7d0,#34d399); }
+.status-held { background: linear-gradient(90deg,#fef3c7,#f59e0b); }
+.status-rerouted { background: linear-gradient(90deg,#e9d5ff,#a78bfa); }
+.status-delayed { background: linear-gradient(90deg,#fecaca,#ef4444); }
+
+/* footer vertical list */
+.footer-list { max-height:220px; overflow-y:auto; padding-right:8px; }
+
+/* small tooltip */
+.tooltip {
+  position: absolute;
+  background: rgba(6,10,18,0.9);
+  padding:8px 10px;
+  border-radius:8px;
+  font-size:13px;
+  border:1px solid rgba(255,255,255,0.04);
+  pointer-events:none;
+  z-index:60;
+}
